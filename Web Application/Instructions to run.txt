@@ -1,0 +1,20 @@
+To run the web application code
+	1.)navigate to the project folder "Web Application"
+
+	2.)type the following command in command prompt/ windows powershell
+
+		python main.py
+
+
+To view the running web application
+	1.)Open the web browser
+	2.)Go to the following URL
+		http://127.0.0.1:5000
+
+**Note**
+
+	The web app is currently deployed successfully and you can access it via the URL bellow
+
+		http://durafit.pythonanywhere.com/
+
+**Use a dummy email/password to sign-up**

@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<style>
+  body {
+    background-color: orange;
+  }
+</style>
+<p>
+  <h5>DURAfit provides you the ability to track your progress of weight-loss/gain. DURAfit helps you to stay fit and healthy.
+    you have to enter you weight daily or weekly basis and DURAfit keeps your data recorded to represent the progress
+    of your journey.</h5>
+</p>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br/>
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Weight(kg)</button>
+  </div>
+  <br/>
+</form>
+  <div>
+    <button class="btn btn-primary" onclick="window.open('https://www.bmi-calculator.net/')">
+      BMI Calculator
+    </button>
+  </div>
+  <br/>
+  <div>
+    <button class="btn btn-primary" onclick="window.open('https://www.bmi-chart.info/images/bmi-chart.jpg')">
+      BMI Chart
+    </button>
+  </div>
+<p>
+  <h5>Note</h5>
+  <h6>The BMI Scale is not accurate all the time. Sometimes your result could be shown as overweight or underweight eventhough you are not.
+    We recommend you to follow a healthy diet plan and exercise regularly to maintain your fitness. </h6>
+  <br/>
+  <br/>
+  <h5>Ask yourself these questions about any diet plan you're considering</h5>
+  <h6>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Does it include various foods from the major food groups: fruits, vegetables, grains, low-fat dairy products, lean protein sources and nuts?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Does it include foods you like and that you would enjoy eating for a lifetime — not just for several weeks or months?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Can you easily find these foods in your local grocery store?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Will you be able to eat your favorite foods or, better yet, all foods (even if some are in small quantities)?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Does it fit your lifestyle and budget?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Does it include proper amounts of nutrients and calories to help you lose weight safely and effectively?<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;*Is regular physical activity part of the plan?<br/>
+  </h6>
+  <div>
+    <button class="btn btn-primary" onclick="window.open('https://www.mayoclinic.org/healthy-lifestyle/weight-loss/basics/diet-plans/hlv-20049483')">
+      Source
+    </button>
+  </div>
+</p>
+{% endblock %}
